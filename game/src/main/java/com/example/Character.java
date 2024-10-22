@@ -2,14 +2,8 @@ package com.example;
 
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
-      
-      
-      
-      Game game = new Game("Simple Game");
-      game.Menu();    
-    }
+public class Character {
+    
     public String input() {
       Scanner scanner = new Scanner(System.in);
       String input = scanner.nextLine();
@@ -19,4 +13,4 @@ public class Main {
    public void print(String msg) {
       System.out.println(msg);
    }
-}   
+}
