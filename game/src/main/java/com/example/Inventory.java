@@ -1,13 +1,13 @@
 package com.example;
 
 public class Inventory {
-    private String[] items;
+    private Item[] items;
     public Inventory(int slots){
-        this.items = new String[slots];
+        this.items = new Item[slots];
     }
-    public boolean Contains(String item){
-        for (String i : this.items){
-            if (i == item){
+    public boolean Contains(Item item){
+        for (Item i : this.items){
+            if (i.getName() == item.getName()){
                 return true;
             }
         }
@@ -21,7 +21,7 @@ public class Inventory {
         }
         return true;
     }
-    public void add(String item){
+    public void add(Item item){
         for (int i=0; i < items.length; i++){
             if (items[i] == null){
                 items[i] = item;
@@ -29,9 +29,9 @@ public class Inventory {
             }
         }
     }
-    public void replaceItem(String newItem, String oldItem){
+    public void replaceItem(Item newItem, Item oldItem){
         for (int i=0; i < items.length; i++){
-            if (items[i] == oldItem){
+            if (items[i] != null && items[i].getName() == oldItem.getName()){
                 items[i] = newItem;
                 return;
             }
@@ -40,7 +40,7 @@ public class Inventory {
     public String getInventory(){
         String inventory = "";
         for (int i=0; i < items.length; i++){
-            inventory = inventory + String.valueOf(i) + " " + items[i] + " ";
+            inventory = inventory + String.valueOf(i) + " " + items[i].getName() + " ";
         }
         return inventory;
     }
