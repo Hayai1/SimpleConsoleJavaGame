@@ -1,6 +1,4 @@
 package com.example;
-
-import java.util.List;
 import java.util.Scanner;
 
 public class Game {
@@ -53,15 +51,15 @@ public class Game {
         String doorOpened = "";
         switch (userChoice) {
             case "1":
-                print("you put your hand on the door handle but all of a sudden door 3 swings open!!!");
+                print("you put your hand on the door handle but all of a sudden door 3 swings open behind it!!! you peek inside and see a goat???");
                 doorOpened = "3";
                 break;
             case "2":
-                print("you put your hand on the door but all of a sudden door 3 swings open!!!");
+                print("you put your hand on the door but all of a sudden door 3 swings open!!! you peek inside and see a goat???");
                 doorOpened = "3";
                 break;
-            case "3":
-                print("you put your hand on the door handle but all of a sudden door 2 swings open!!!");
+             case "3":
+                print("you put your hand on the door handle but all of a sudden door 2 swings open!!! you peek inside and see nothing");
                 doorOpened = "2";
                 break;
         }
@@ -72,26 +70,43 @@ public class Game {
         userChoice = input();
         switch (userChoice) {
             case "1":
-                print("you open the door and see a bright light, you walk through and find yourself outside, you have escaped the trap");
+                print("you open the door and see a bright light, you walk through and find yourself outside");
+                outside();
                 break;
             case "2":
                 if (doorOpened == "2"){
                     print("you deside to further inspect the room with the door that opened it's empty? ... all of a sudden the floor drops it was a trap door!!!");
                 }
-                print("you open the door and walk into the room and see a trap door, you fall through and find yourself in");
+                else {
+                    print("you open the door and walk into the room and see a trap door, you fall through and find yourself in");
+                }
+                underground();
             case "3":
                 if (doorOpened == "3"){
                     print("you deside to further inspect the room with the door that opened with the goat?");
                 }
-                print("you open the door and see a goat, you have been tricked");
-                break;
+                
+                else{
+                    print("you open the door and see a goat, you have been tricked");
+                }
+                goat();
         }
 
     }
 
+    public void outside(){
+
+    }
+    public void underground(){
+
+    }
+    public void goat(){
+
+    }
     private String input(){
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
+        scanner.close();
         return input;
     }
     private void print(String msg){
